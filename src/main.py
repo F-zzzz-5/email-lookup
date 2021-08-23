@@ -65,7 +65,9 @@ class Lookup(Firefox):
         else:
             return self.App.Error(error=f"RESPONSE CODE {lookup_request.status_code}")
 
-App = Application("monitor.firefox.com | Email-Lookup")
+        
+if __name__ == "__main__":
+    App = Application("monitor.firefox.com | Email-Lookup")
 
-while True:
-    Lookup(App, input("Email: ").strip().lower()).Execute()
+    while True:
+        Lookup(App, input("Email: ").strip().lower()).Execute()
